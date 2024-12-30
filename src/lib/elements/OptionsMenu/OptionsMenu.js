@@ -35,7 +35,7 @@ const OptionsMenu = React.forwardRef(({ children = [], show = false, timeout = 3
           autoVerticalPosition: true,
           autoHorizontalPosition: true
         }}
-        style={{ minWidth: `${dropdownWidth}px` }}
+        style={{ width: `${dropdownWidth}px` }}
       >
         <ul className="options-menu__body">{children}</ul>
       </PopUpDialog>
