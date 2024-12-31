@@ -35,6 +35,7 @@ import './formSelect.scss'
 const FormSelect = ({
   className = '',
   density = 'normal',
+  dropDownClassName = '',
   disabled = false,
   hideSelectedOption = false,
   label = '',
@@ -340,7 +341,7 @@ const FormSelect = ({
             )}
             {isOpen && (
               <PopUpDialog
-                className="form-field form-field-select__options-list"
+                className={`form-field form-field-select__options-list ${dropDownClassName}`}
                 headerIsHidden
                 ref={popUpRef}
                 customPosition={{
@@ -402,6 +403,7 @@ FormSelect.propTypes = {
   className: PropTypes.string,
   density: PropTypes.oneOf(['dense', 'normal', 'medium', 'chunky']),
   disabled: PropTypes.bool,
+  dropDownClassName: PropTypes.string,
   hideSelectedOption: PropTypes.bool,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
