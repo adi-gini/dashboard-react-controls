@@ -27,6 +27,7 @@ import { ReactComponent as Checkmark } from '../../images/checkmark.svg'
 import './selectOption.scss'
 
 const SelectOption = ({
+  className,
   item,
   name,
   onClick = () => {},
@@ -35,6 +36,7 @@ const SelectOption = ({
   withSelectedIcon = true
 }) => {
   const selectClassName = classnames(
+    className,
     'select__item',
     multiple && 'multiple',
     item.hidden && 'hidden',

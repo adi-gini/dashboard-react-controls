@@ -341,7 +341,7 @@ const FormSelect = ({
             )}
             {isOpen && (
               <PopUpDialog
-                className={`form-field form-field-select__options-list ${dropDownClassName}`}
+                className="form-field form-field-select__options-list"
                 headerIsHidden
                 ref={popUpRef}
                 customPosition={{
@@ -375,6 +375,7 @@ const FormSelect = ({
                     {sortedOptionsList.map(option => {
                       return (
                         <SelectOption
+                          className={dropDownClassName}
                           item={option}
                           key={option.id}
                           name={name}

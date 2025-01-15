@@ -42,8 +42,8 @@ const FormSelect = _ref => {
   let {
     className = '',
     density = 'normal',
+    dropDownClassName = '',
     disabled = false,
-    dropdownClassNames = '',
     hideSelectedOption = false,
     label = '',
     multiple = false,
@@ -282,7 +282,7 @@ const FormSelect = _ref => {
             isOpen: isConfirmDialogOpen,
             message: selectedItemAction.confirm.message
           }), isOpen && /*#__PURE__*/(0, _jsxRuntime.jsx)(_PopUpDialog.default, {
-            className: `form-field form-field-select__options-list ${dropdownClassNames}`,
+            className: "form-field form-field-select__options-list",
             headerIsHidden: true,
             ref: popUpRef,
             customPosition: {
@@ -291,7 +291,6 @@ const FormSelect = _ref => {
               autoHorizontalPosition: true
             },
             style: {
-              background: 'red',
               maxWidth: `${selectWidth < 500 ? 500 : selectWidth}px`,
               minWidth: `${selectWidth}px`
             },
@@ -314,6 +313,7 @@ const FormSelect = _ref => {
                 ref: optionsListRef,
                 children: sortedOptionsList.map(option => {
                   return /*#__PURE__*/(0, _jsxRuntime.jsx)(_SelectOption.default, {
+                    className: dropDownClassName,
                     item: option,
                     name: name,
                     onClick: selectedOption => {
@@ -339,6 +339,7 @@ FormSelect.propTypes = {
   className: _propTypes.default.string,
   density: _propTypes.default.oneOf(['dense', 'normal', 'medium', 'chunky']),
   disabled: _propTypes.default.bool,
+  dropDownClassName: _propTypes.default.string,
   hideSelectedOption: _propTypes.default.bool,
   label: _propTypes.default.string,
   name: _propTypes.default.string.isRequired,
