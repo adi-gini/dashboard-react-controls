@@ -32,6 +32,7 @@ such restriction.
 
 const SelectOption = _ref => {
   let {
+    style,
     item,
     name,
     onClick = () => {},
@@ -56,6 +57,7 @@ const SelectOption = _ref => {
     });
   }
   return /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
+    style: style,
     "data-testid": "select-option",
     className: selectClassName,
     onClick: () => {

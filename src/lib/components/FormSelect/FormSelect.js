@@ -383,6 +383,10 @@ const FormSelect = ({
                           multiple={multiple}
                           selectedId={!multiple ? input.value : ''}
                           withSelectedIcon={withSelectedIcon}
+                          style={{
+                            maxWidth: `${selectWidth < 200 ? 200 : selectWidth}px`,
+                            minWidth: `${selectWidth}px`
+                          }}
                         />
                       )
                     })}

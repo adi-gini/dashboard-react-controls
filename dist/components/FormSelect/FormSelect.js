@@ -43,7 +43,6 @@ const FormSelect = _ref => {
     className = '',
     density = 'normal',
     disabled = false,
-    dropdownClassNames = '',
     hideSelectedOption = false,
     label = '',
     multiple = false,
@@ -282,7 +281,7 @@ const FormSelect = _ref => {
             isOpen: isConfirmDialogOpen,
             message: selectedItemAction.confirm.message
           }), isOpen && /*#__PURE__*/(0, _jsxRuntime.jsx)(_PopUpDialog.default, {
-            className: `form-field form-field-select__options-list ${dropdownClassNames}`,
+            className: "form-field form-field-select__options-list",
             headerIsHidden: true,
             ref: popUpRef,
             customPosition: {
@@ -291,7 +290,6 @@ const FormSelect = _ref => {
               autoHorizontalPosition: true
             },
             style: {
-              background: 'red',
               maxWidth: `${selectWidth < 500 ? 500 : selectWidth}px`,
               minWidth: `${selectWidth}px`
             },
@@ -321,7 +319,11 @@ const FormSelect = _ref => {
                     },
                     multiple: multiple,
                     selectedId: !multiple ? input.value : '',
-                    withSelectedIcon: withSelectedIcon
+                    withSelectedIcon: withSelectedIcon,
+                    style: {
+                      maxWidth: `${selectWidth < 200 ? 200 : selectWidth}px`,
+                      minWidth: `${selectWidth}px`
+                    }
                   }, option.id);
                 })
               })]
