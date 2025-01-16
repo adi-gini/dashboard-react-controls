@@ -42,7 +42,6 @@ const FormSelect = _ref => {
   let {
     className = '',
     density = 'normal',
-    dropDownClassName = '',
     disabled = false,
     hideSelectedOption = false,
     label = '',
@@ -313,7 +312,6 @@ const FormSelect = _ref => {
                 ref: optionsListRef,
                 children: sortedOptionsList.map(option => {
                   return /*#__PURE__*/(0, _jsxRuntime.jsx)(_SelectOption.default, {
-                    className: dropDownClassName,
                     item: option,
                     name: name,
                     onClick: selectedOption => {
@@ -321,7 +319,11 @@ const FormSelect = _ref => {
                     },
                     multiple: multiple,
                     selectedId: !multiple ? input.value : '',
-                    withSelectedIcon: withSelectedIcon
+                    withSelectedIcon: withSelectedIcon,
+                    style: {
+                      maxWidth: `${selectWidth < 200 ? 200 : selectWidth}px`,
+                      minWidth: `${selectWidth}px`
+                    }
                   }, option.id);
                 })
               })]
@@ -339,7 +341,6 @@ FormSelect.propTypes = {
   className: _propTypes.default.string,
   density: _propTypes.default.oneOf(['dense', 'normal', 'medium', 'chunky']),
   disabled: _propTypes.default.bool,
-  dropDownClassName: _propTypes.default.string,
   hideSelectedOption: _propTypes.default.bool,
   label: _propTypes.default.string,
   name: _propTypes.default.string.isRequired,

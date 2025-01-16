@@ -35,7 +35,6 @@ import './formSelect.scss'
 const FormSelect = ({
   className = '',
   density = 'normal',
-  dropDownClassName = '',
   disabled = false,
   hideSelectedOption = false,
   label = '',
@@ -375,7 +374,6 @@ const FormSelect = ({
                     {sortedOptionsList.map(option => {
                       return (
                         <SelectOption
-                          className={dropDownClassName}
                           item={option}
                           key={option.id}
                           name={name}
@@ -385,6 +383,10 @@ const FormSelect = ({
                           multiple={multiple}
                           selectedId={!multiple ? input.value : ''}
                           withSelectedIcon={withSelectedIcon}
+                          style={{
+                            maxWidth: `${selectWidth < 200 ? 200 : selectWidth}px`,
+                            minWidth: `${selectWidth}px`
+                          }}
                         />
                       )
                     })}
@@ -404,7 +406,6 @@ FormSelect.propTypes = {
   className: PropTypes.string,
   density: PropTypes.oneOf(['dense', 'normal', 'medium', 'chunky']),
   disabled: PropTypes.bool,
-  dropDownClassName: PropTypes.string,
   hideSelectedOption: PropTypes.bool,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,

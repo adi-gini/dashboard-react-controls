@@ -32,7 +32,7 @@ such restriction.
 
 const SelectOption = _ref => {
   let {
-    className,
+    style,
     item,
     name,
     onClick = () => {},
@@ -40,7 +40,7 @@ const SelectOption = _ref => {
     selectedId,
     withSelectedIcon = true
   } = _ref;
-  const selectClassName = (0, _classnames.default)(className, 'select__item', multiple && 'multiple', item.hidden && 'hidden', item.disabled && 'disabled');
+  const selectClassName = (0, _classnames.default)('select__item', multiple && 'multiple', item.hidden && 'hidden', item.disabled && 'disabled');
   if (multiple) {
     return /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
       "data-testid": "select-checkbox",
@@ -57,6 +57,7 @@ const SelectOption = _ref => {
     });
   }
   return /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
+    style: style,
     "data-testid": "select-option",
     className: selectClassName,
     onClick: () => {
