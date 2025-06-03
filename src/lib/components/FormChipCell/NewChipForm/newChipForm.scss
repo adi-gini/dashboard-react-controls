@@ -1,12 +1,11 @@
-@import '../../../scss/colors';
-@import '../../../scss/borders';
-@import '../../../scss/mixins';
+@use '../../../scss/colors';
+@use '../../../scss/mixins';
 
 .edit-chip {
   &-container {
     display: inline-flex;
     max-width: 100%;
-    margin: 2px 8px 2px 0;
+    margin: 2px 0 2px 0;
     padding: 0 8px;
     font-size: 14px;
     line-height: 22px;
@@ -24,32 +23,32 @@
 
       &.item_edited {
         &_invalid {
-          color: $amaranth;
+          color: colors.$amaranth;
         }
       }
 
       &.input-label-key,
       &.input-label-value {
         &::placeholder {
-          color: $topaz;
+          color: colors.$topaz;
         }
       }
     }
 
     &-background {
-      @include chipBackground(false);
+      @include mixins.chipBackground(false);
     }
 
     &-border {
-      @include chipBorder();
+      @include mixins.chipBorder();
     }
 
     &-density {
-      @include chipDensity(true, false);
+      @include mixins.chipDensity(true, false);
     }
 
     &-font {
-      @include chipsFont(EditableChip);
+      @include mixins.chipsFont(EditableChip);
     }
 
     .item-icon-close {

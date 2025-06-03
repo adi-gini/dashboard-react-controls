@@ -1,6 +1,6 @@
 
 
-Create a new dist version 2.2.23
+Create a new dist version 3.0.3
 
 Collecting:
-- Impl [Details] Move Redux to RTK (#380)
+- Impl [Monitoring application] Add Applications table (#403)
