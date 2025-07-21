@@ -80,7 +80,7 @@ export const getTimeElapsedByDate = creationDate => {
 }
 
 export const getDateAndTimeByFormat = (date, dateFormat) => {
-  return moment(date).format(dateFormat)
+  return moment.utc(date).local().format(dateFormat)
 }
 
 export const sortListByDate = (list = [], field, isAscending = true) => {
